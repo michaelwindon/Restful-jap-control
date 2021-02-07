@@ -1,0 +1,145 @@
+ - platform: command_line
+    switches:
+###########Office Room ###############
+      office_tv:
+        command_on: /usr/bin/curl -d 'tv=10.128.0.3&commands=E0 04&commands=EF 82 20 00' http://192.168.54.126:1906/api/cec
+        command_off: /usr/bin/curl -d 'tv=10.128.0.3&commands=E0 36' http://192.168.54.126:1906/api/cec
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/cec?tv=10.128.0.3"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Office TV
+        
+########## Office Room Tv Sources #############
+      office_tv_cheryl_att:
+        command_on: /usr/bin/curl -d 'turn=on&room=15&source=16' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=15&source=16' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=15&source=16"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Office TV Cheryl ATT
+        
+      office_tv_jasmine_att:
+        command_on: /usr/bin/curl -d 'turn=on&room=15&source=15' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=15&source=15' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=15&source=15"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Office TV Jazz ATT
+
+      office_tv_amazon_tv:
+        command_on: /usr/bin/curl -d 'turn=on&room=15&source=14' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=15&source=14' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=15&source=14"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Office TV Amazon TV
+
+      office_tv_ps4:
+        command_on: /usr/bin/curl -d 'turn=on&room=15&source=13' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=15&source=13' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=15&source=13"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Office TV PS4
+
+      office_tv_xbox1_att:
+        command_on: /usr/bin/curl -d 'turn=on&room=15&source=12' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=15&source=12' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=15&source=12"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Office TV XboX
+
+      office_tv_qnap:
+        command_on: /usr/bin/curl -d 'turn=on&room=15&source=11' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=15&source=11' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=15&source=11"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Office TV QNAP
+
+################## Game Room #####################
+      game_room_tv:
+        command_on: /usr/bin/curl -d 'tv=10.128.0.3&commands=E0 04&commands=EF 82 20 00' http://192.168.54.126:1906/api/cec
+        command_off: /usr/bin/curl -d 'tv=10.128.0.3&commands=E0 36' http://192.168.54.126:1906/api/cec
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/cec?tv=10.128.0.3"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Game Room TV
+        
+      game_room_tv_cheryl_att:
+        command_on: /usr/bin/curl -d 'turn=on&room=9&source=16' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=9&source=16' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=9&source=16"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Gameroom TV Cheryl ATT
+
+      game_room_tv_jasmine_att:
+        command_on: /usr/bin/curl -d 'turn=on&room=9&source=15' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=9&source=15' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=9&source=15"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Gameroom TV Jazz ATT
+
+      game_room_tv_amazon_tv:
+        command_on: /usr/bin/curl -d 'turn=on&room=9&source=14' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=9&source=14' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=9&source=14"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Gameroom TV Amazon TV
+
+      game_room_tv_ps4:
+        command_on: /usr/bin/curl -d 'turn=on&room=9&source=13' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=9&source=13' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=9&source=13"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Gameroom TV PS4
+
+      game_room_tv_xbox1_att:
+        command_on: /usr/bin/curl -d 'turn=on&room=9&source=12' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=9&source=12' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=9&source=12"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Gameroom TV XboX
+
+      game_room_tv_qnap:
+        command_on: /usr/bin/curl -d 'turn=on&room=9&source=11' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=9&source=11' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=9&source=11"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Gameroom TV QNAP
+
+################## Family Room #####################  
+      family_room_tv_cheryl_att:
+        command_on: /usr/bin/curl -d 'turn=on&room=12&source=16' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=12&source=61' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=12&source=16"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Family Room TV Cheryl ATT
+
+      family_room_tv_jasmine_att:
+        command_on: /usr/bin/curl -d 'turn=on&room=12&source=15' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=12&source=15' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=12&source=15"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Family Room TV Jazz ATT
+
+      family_room_tv_amazon_tv:
+        command_on: /usr/bin/curl -d 'turn=on&room=12&source=14' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=12&source=14' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=12&source=14"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Family Room TV Amazon TV
+
+      family_room_tv_ps4:
+        command_on: /usr/bin/curl -d 'turn=on&room=12&source=13' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=12&source=13' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=12&source=13"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Family Room TV PS4
+
+      family_room_tv_xbox1_att:
+        command_on: /usr/bin/curl -d 'turn=on&room=12&source=12' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=12&source=12' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=12&source=12"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Family Room TV XboX
+
+      family_room_tv_qnap:
+        command_on: /usr/bin/curl -d 'turn=on&room=12&source=11' http://192.168.54.126:1906/api/jap
+        command_off: /usr/bin/curl -d 'turn=off&room=12&source=11' http://192.168.54.126:1906/api/jap
+        command_state: /usr/bin/curl "http://192.168.54.126:1906/api/jap?room=12&source=11"
+        value_template: '{{ value_json.status == "on" }}'
+        friendly_name: Family Room TV QNAP
