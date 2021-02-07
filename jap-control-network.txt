@@ -1,0 +1,4 @@
+CEC script needs access to JAP Control network. Add the linux route to allow your server to access the control vlan, this has to be done after resta
+rt.
+
+sudo ip route add 10.128.0.0/9 via 192.168.54.34 dev ens3
